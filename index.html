@@ -1,15 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Inivtacion Cumpleaños</title>
+
 
     <style>
+        body {
+            background: #3399ff;
+            display: flex;
+            /* Hacer que el cuerpo sea un contenedor flex */
+            justify-content: center;
+            /* Centrar horizontalmente los elementos hijos */
+            align-items: center;
+            /* Centrar verticalmente los elementos hijos */
+            height: 100vh;
+            /* Ajustar la altura del cuerpo al 100% de la ventana */
+        }
+
+        /* body {
+            background: #3399ff;
+        }
+ */
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            animation: ripple 15s infinite;
+            box-shadow: 0px 0px 1px 0px #508fb9;
+        }
+
+        .small {
+            width: 200px;
+            height: 200px;
+            left: -100px;
+            bottom: -100px;
+        }
+
+        .medium {
+            width: 400px;
+            height: 400px;
+            left: -200px;
+            bottom: -200px;
+        }
+
+        .large {
+            width: 600px;
+            height: 600px;
+            left: -300px;
+            bottom: -300px;
+        }
+
+        .xlarge {
+            width: 800px;
+            height: 800px;
+            left: -400px;
+            bottom: -400px;
+        }
+
+        .xxlarge {
+            width: 1000px;
+            height: 1000px;
+            left: -500px;
+            bottom: -500px;
+        }
+
+        .shade1 {
+            opacity: 0.2;
+        }
+
+        .shade2 {
+            opacity: 0.5;
+        }
+
+        .shade3 {
+            opacity: 0.7;
+        }
+
+        .shade4 {
+            opacity: 0.8;
+        }
+
+        .shade5 {
+            opacity: 0.9;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: scale(0.8);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(0.8);
+            }
+        }
+
+
+
         /* Estilos para ocultar el div */
         .hidden {
             display: none;
+        }
+
+        /* Estilos para el contenedor */
+        .container_1 {
+            margin: 0 auto;
+            /* Esto centrará horizontalmente el div */
+        }
+
+        .container {
+            margin: 0 auto;
+            /* Esto centrará horizontalmente el div */
+            position: relative; /* Añadir posición relativa para z-index */
+            z-index: 2; /* Hacer que el contenedor esté delante de .ripple-background */
+        }
+
+
+        /* Para pantallas grandes */
+        @media screen and (min-width: 1024px) {
+            .container {
+                width: 70%;
+            }
+        }
+
+        /* Para pantallas medianas */
+        @media screen and (max-width: 1023px) and (min-width: 768px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        /* Para pantallas pequeñas */
+        @media screen and (max-width: 767px) {
+            .container {
+                width: 100%;
+            }
         }
     </style>
 
@@ -39,18 +171,29 @@
         </div>
     </div>
 
+
+    <div class='ripple-background'>
+        <div class='circle xxlarge shade1'></div>
+        <div class='circle xlarge shade2'></div>
+        <div class='circle large shade3'></div>
+        <div class='circle mediun shade4'></div>
+        <div class='circle small shade5'></div>
+    </div>
+
+
     <script src="https://view.genial.ly/static/embed/embed.js"></script>
 
     <script>
 
 
-        // Esperar a que el DOM esté completamente cargado
-        document.addEventListener('DOMContentLoaded', function () {
-            // Obtener el div por su atributo data-cy
-            var div = document.querySelector('[data-cy="eduWatermark"]');
+        // Esperar a que el genially-embed esté completamente cargado
+        window.addEventListener('genially:ready', function () {
+            // Obtener el div por su clase
+            var div = document.querySelector('.container-wrapper-genially');
             // Ocultar el div agregando la clase 'hidden'
             div.classList.add('hidden');
         });
+
 
         (
             function

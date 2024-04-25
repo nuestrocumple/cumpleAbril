@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* Estilos para ocultar el div */
+        .hidden {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <!-- <div style="width: 100%;">
+          <div style="position: relative; padding-bottom: 100%; padding-top: 0; height: 0;">
+            <iframe title="Invitación Cumpleaños Abril" frameborder="0" width="800" height="800"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              src="https://view.genial.ly/662a9ee336377d001485dbcd" type="text/html" allowscriptaccess="always"
+              allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div>
+        </div> -->
+
+        <div class="container-wrapper-genially" style="position: relative; min-height: 400px; max-width: 100%;">
+            <video class="loader-genially" autoplay="autoplay" loop="loop" playsinline="playsInline" muted="muted"
+                style="position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);width: 80px;height: 80px;margin-bottom: 10%">
+                <source src="https://static.genial.ly/resources/loader-default-rebranding.mp4" type="video/mp4" />Your
+                browser
+                does not support the video tag.
+            </video>
+            <div id="662a9ee336377d001485dbcd" class="genially-embed"
+                style="margin: 0px auto; position: relative; height: auto; width: 100%;"></div>
+        </div>
+    </div>
+
+    <script src="https://view.genial.ly/static/embed/embed.js"></script>
+
+    <script>
+
+
+        // Esperar a que el DOM esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function () {
+            // Obtener el div por su atributo data-cy
+            var div = document.querySelector('[data-cy="eduWatermark"]');
+            // Ocultar el div agregando la clase 'hidden'
+            div.classList.add('hidden');
+        });
+
+        (
+            function
+                (
+                    d
+                ) {
+                var
+                    js, id = "genially-embed-js"
+                    , ref = d.getElementsByTagName("script")[0];
+                if
+                    (d.getElementById(id)) {
+                    return;
+                } js = d.createElement("script"); js.id = id; js.async = true;
+                js.src = "https://view.genial.ly/static/embed/embed.js";
+                ref.parentNode.insertBefore
+                    (js, ref);
+            }(document));
+    </script>
+
+</body>
+
+</html>
